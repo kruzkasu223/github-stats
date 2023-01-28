@@ -47,8 +47,8 @@ jobs:
       # Commit all changed files to the repository
       - name: Commit to the repo
         run: |
-          git config --global user.name "kruzkasu223/github-stats"
-          git config --global user.email "github-stats[bot]@kruzkasu223.github.io"
+          git config --global user.name ${{ secrets.COMMIT_USER_NAME }}
+          git config --global user.email ${{ secrets.COMMIT_USER_EMAIL }}
           git add .
           # Force the build to succeed, even if no files were changed
           git commit -m 'chore: update stats' || true
